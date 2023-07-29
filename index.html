@@ -1,0 +1,59 @@
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>MiLu Calzados</title>
+  <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark@5.3.0/dist/css/bootstrap-dark.min.css">
+  <script src="script.js" defer></script>
+  <script src="productos.json" defer></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="img/logo.jpg" alt="Logo" width="100">
+    </div>
+    <button id="mode" class="btn btn-outline-secondary">Cambiar Tono</button>
+
+    <div class="header-right">
+      <button id="iniciarSesionBtn">Iniciar sesión</button>
+      <div id="mensajeBienvenida" class="oculto"></div>
+    </div>
+  </header>
+
+  <main>
+    <div id="main">
+      <div class="mensaje">
+        <h2>Comprando más de $5000, 3 cuotas sin interés y envío gratis</h2>
+      </div>
+      <div class="contenido">
+        <div class="catalogo" id="catalogoProductos">
+          <h2>Catálogo de Productos</h2>
+        </div>
+        <div class="carrito" id="carritoProductos">
+          <h2>Carrito de Compras</h2>
+          <div id="carritoItems"></div>
+
+          <br>
+          <br>
+          <p id="subtotal">Total: $0</p>
+          <button id="btnComprar">Comprar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2023 MiLu Calzados. Todos los derechos reservados.</p>
+      <p>Contacto: info@MiLu.com</p>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
