@@ -14,7 +14,7 @@ iniciarSesionBtn.addEventListener('click', () => {
   }
 });
 
-// Define la URL del archivo JSON
+
 const catalogoURL = 'productos.json';
 
 // Función para cargar el catálogo de productos desde el JSON
@@ -33,13 +33,11 @@ async function cargarCatalogo() {
   }
 }
 
-// Función para mostrar un mensaje de error en el catálogo
 function mostrarErrorCatalogo() {
   let catalogoContainer = document.getElementById('catalogoProductos');
   catalogoContainer.innerHTML = '<p>Error al cargar el catálogo. Inténtalo de nuevo más tarde.</p>';
 }
 
-// Llamar a la función para cargar el catálogo al cargar la página
 cargarCatalogo();
 
 
@@ -160,11 +158,9 @@ function agregarAlCarrito(index) {
   );
 
   if (productoEnCarrito) {
-    // Si el producto ya está en el carrito, aumentamos su cantidad en 1
     productoEnCarrito.cantidad++;
     producto.stock--;
   } else {
-    // Si el producto no está en el carrito, lo agregamos al carrito con cantidad 1
     carritoItems.push({ ...producto, cantidad: 1 });
     producto.stock--;
   }
@@ -221,7 +217,7 @@ function eliminarDelCarrito(producto) {
   }
 }
 
-// Función para realizar la compra
+// Función realizar la compra
 function comprar() {
   let total = carritoItems.reduce((suma, producto) => suma + producto.precio * producto.cantidad, 0);
 
@@ -245,7 +241,7 @@ function comprar() {
   }
 }
 
-// Evento para el botón de comprar
+// Evento botón de comprar
 let btnComprar = document.getElementById('btnComprar');
 btnComprar.addEventListener('click', () => {
   if (carritoItems.length > 0) {
@@ -255,11 +251,10 @@ btnComprar.addEventListener('click', () => {
   }
 });
 
-// Generar el catálogo y el carrito al cargar la página
 generarCatalogo();
 generarCarrito();
 
-//Evento boton "Light" y "Dark" mode
+//Evento boton Light y Dark mode
 //dark light mode
 
 let boton = document.getElementById('mode');
