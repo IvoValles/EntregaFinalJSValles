@@ -112,10 +112,10 @@ function generarCatalogo() {
     productosFiltrados = catalogoProductos.filter((producto) => producto.tipo === filtroTipo);
   }
 
-  productosFiltrados.forEach((producto, index) => {
+  productosFiltrados.forEach((producto) => {
     let agregarBtn = '';
     if (producto.stock > 0) {
-      agregarBtn = `<button onclick="agregarAlCarrito(${index})">Agregar al carrito</button>`;
+      agregarBtn = `<button data-product-id="${producto.id}" onclick="agregarAlCarrito(${producto.id})">Agregar al carrito</button>`;
     } else {
       agregarBtn = '<button disabled>Sin stock</button>';
     }
@@ -136,14 +136,16 @@ function generarCatalogo() {
 
 
 // Función para buscar un producto en el carrito
-function buscarProductoEnCarrito(producto) {
-  return carritoItems.findIndex((item) => item.nombre === producto.nombre);
-}
+function agregarAlCarrito(id) {
+  let producto = catalogoProductos.find((producto) => producto.id === id);
 
-function agregarAlCarrito(index) {
-  let producto = catalogoProductos[index];
+  if (!producto) {
+    Swal.fire('Producto no encontrado en el catálogo');
+    return;
+  }
+
   let productoEnCarrito = carritoItems.find(
-    (item) => item.nombre === producto.nombre && item.precio === producto.precio
+    (item) => item.id === producto.id
   );
 
   if (productoEnCarrito) {
@@ -151,23 +153,20 @@ function agregarAlCarrito(index) {
       productoEnCarrito.cantidad++;
       producto.stock--;
     } else {
-      Swal.fire(
-        'No hay stock disponible para este producto!'
-      )    }
+      Swal.fire('No hay stock disponible para este producto!');
+    }
   } else {
     if (producto.stock > 0) {
       carritoItems.push({ ...producto, cantidad: 1 });
       producto.stock--;
     } else {
-      Swal.fire(
-        'No hay stock disponible para este producto!'
-      )    }
+      Swal.fire('No hay stock disponible para este producto!');
+    }
   }
 
   generarCatalogo();
   generarCarrito();
 }
-
 // Función para generar el contenido del carrito
 function generarCarrito() {
   let carritoContainer = document.getElementById('carritoItems');
