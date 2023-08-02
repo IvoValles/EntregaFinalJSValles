@@ -1,4 +1,3 @@
-/* Estilos previamente definidos */
 *{
   margin: 0;
   padding: 0;
@@ -186,7 +185,7 @@ footer {
 }
 
 #inicioSesionForm {
-  display: block; /* Mostrar el formulario */
+  display: block; 
 }
 
 .oculto {
@@ -198,6 +197,6 @@ footer {
   background-color: #3d3d3d;
   padding: 10px;
   text-align: center;
-  display: none; /* Ocultar el mensaje de bienvenida inicialmente */
+  display: none; 
   font-weight: bold;
 }

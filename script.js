@@ -250,14 +250,12 @@ function comprar() {
       Swal.fire(`¡Compra exitosa!\nTotal de la compra: $${total}\nValor de cada cuota: $${valorCuota.toFixed(2)}`)
         .then((result) => {
           if (result.isConfirmed) {
-            // Agregar notificación de Toastify
             Toastify({
               text: "Gracias por tu compra, nos pondremos en contacto para coordinar la entrega.",
-              duration: 5000, // Duración en milisegundos (5 segundos en este caso)
-              gravity: "top", // Posición de la notificación en la pantalla (top, center, bottom)
-              backgroundColor: "rgb(3, 2, 2)", // Color de fondo de la notificación
-              close: true, // Mostrar o no el botón de cerrar
-              color: "black"
+              duration: 5000, 
+              gravity: "top", 
+              backgroundColor: "rgb(3, 2, 2)", 
+              close: true, 
             }).showToast();
 
             carritoItems = [];
@@ -272,13 +270,12 @@ function comprar() {
     Swal.fire(`¡Compra exitosa!\nMonto de la compra: $${total}`)
       .then((result) => {
         if (result.isConfirmed) {
-          // Agregar notificación de Toastify
           Toastify({
             text: "Gracias por tu compra, nos pondremos en contacto para coordinar la entrega.",
-            duration: 5000, // Duración en milisegundos (5 segundos en este caso)
-            gravity: "top", // Posición de la notificación en la pantalla (top, center, bottom)
-            backgroundColor: "green", // Color de fondo de la notificación
-            close: true, // Mostrar o no el botón de cerrar
+            duration: 5000, 
+            gravity: "top", 
+            backgroundColor: "rgb(3, 2, 2)", 
+            close: true, 
           }).showToast();
 
           carritoItems = [];
