@@ -10,6 +10,10 @@ header {
   background-color: #3d3d3d;
 }
 
+.main {
+  margin-top: 0;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -34,7 +38,10 @@ button {
   display: none;
 }
 /* Estilos previamente definidos */
-
+.filtros {
+  background-color: rgb(207, 204, 204);
+  font-weight: bold;
+}
 .centrado {
   display: flex;
   justify-content: center;
@@ -167,14 +174,30 @@ footer {
 .mensaje {
   background-color: gray;
   text-align: center;
+
 }
 
 .dark{
-  background-color: rgb(0, 0, 0);
   color: white;
 }
 
 .light{
-  background-color: white;
   color: black;
+}
+
+#inicioSesionForm {
+  display: block; /* Mostrar el formulario */
+}
+
+.oculto {
+  display: none;
+}
+
+#mensajeBienvenida {
+  color: white;
+  background-color: #3d3d3d;
+  padding: 10px;
+  text-align: center;
+  display: none; /* Ocultar el mensaje de bienvenida inicialmente */
+  font-weight: bold;
 }
